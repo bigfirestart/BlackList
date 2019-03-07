@@ -1,0 +1,27 @@
+{% extends 'sample.html' %}
+{% block content %}
+<table class="table animated flipInY">
+<thead class="thead">
+<tr class="thead row">
+  <th scope="col" class="col">Имя обидчика</th>
+  <th scope="col" class="col">Причина</th>
+  <th scope="col" class="col">Обида</th>
+</tr>
+</thead>
+<tbody >
+ {% for item in list %}
+<tr class="row">
+  <th scope="row" class="col">{{item.name}}</th>
+  <td class="col">{{item.reason}}</td>
+  <td class="col">{{item.anger_procent}} %</td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
+<div class="row">
+        <div class="col">
+            <button type="button" name="button" class="btn btn-danger" onclick="location.href = '/offenders';"> Обидчики</button>
+        </div>
+</div>
+{% endblock %}

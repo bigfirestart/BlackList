@@ -1,0 +1,18 @@
+{% extends 'sample.html' %}
+{% block content %}
+
+<div class="row ">
+    <ol class="rounded col-md-5 lft animated flipInY">
+        {% for item in list %}
+        <li><a href="#">{{item.name}}</a></li>
+        {% endfor %}
+    </ol>
+</div>
+<div class="row">
+
+    <div class="col">
+        <button type="button" name="button" class="btn btn-danger" onclick="location.href = '/';"> Список обид</button>
+    </div>
+
+</div>
+{% endblock %}

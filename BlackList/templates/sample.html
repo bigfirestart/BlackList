@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Black List</title>
+    <link rel="stylesheet" href="{% static 'animate.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style media="screen">
+        body {
+            font-family: "Consolas";
+            font-size: 25px;
+            background-color: #121212;
+            text-align: center;
+        }
+
+        tr {
+            color: #d42820;
+            /*
+                red
+            */
+
+        }
+
+        table {
+            background-color: #171717;
+        }
+
+        .three {
+            background: #121212;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .three h1 {
+            font-family: 'Merriweather', serif;
+            position: relative;
+            color: #FCF2E5;
+            background: #d42820;
+            font-size: 2.5em;
+            font-weight: normal;
+            padding: 10px 40px;
+            display: inline-block;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .three h1:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            left: 0;
+            bottom: -15px;
+            background: #d42820;
+        }
+
+        .three h1:after {
+            content: "";
+            position: absolute;
+            height: 0;
+            width: 80%;
+            border-top: 10px solid #d42820;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -25px;
+        }
+
+        @media (max-width: 500px) {
+            .three h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .three h1 {
+                font-size: 1.5em;
+                padding: 10px 30px;
+            }
+        }
+
+        .btn {
+            background-color: #d42820;
+            font-size: 23px;
+        }
+
+        .rounded {
+            counter-reset: li;
+            list-style: none;
+            font: 30px "Trebuchet MS", "Lucida Sans";
+            padding: 0;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+            text-align: center;
+        }
+
+        .rounded a {
+            position: relative;
+            display: block;
+            padding: .4em .4em .4em 2em;
+            margin: .5em 0;
+            background: #d42820;
+            color: white;
+            text-decoration: none;
+            border-radius: .3em;
+            transition: .3s ease-out;
+        }
+
+        .rounded a:hover {
+            background: white;
+            color: black;
+        }
+
+        .rounded a:hover:before {
+            transform: rotate(360deg);
+        }
+
+        .rounded a:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #d42820;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: .3em solid white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 2em;
+            transition: all .3s ease-out;
+        }
+        .lft{
+            margin-left: 28%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="three">
+            <h1>Black List</h1>
+        </div>
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+
+</body>
+
+</html>
